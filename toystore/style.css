@@ -1,0 +1,65 @@
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
+html,body{margin:0;height:100%;background:#2a2340;overflow:hidden;font-family:"Arial Rounded MT Bold","Trebuchet MS","Segoe UI",system-ui,sans-serif;color:#fff;touch-action:none}
+canvas#gl{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none}
+.stroke{text-shadow:-2px -2px 0 #23183f,2px -2px 0 #23183f,-2px 2px 0 #23183f,2px 2px 0 #23183f,0 3px 0 #23183f,0 6px 12px #0008;font-weight:900}
+#hud{position:fixed;inset:0;pointer-events:none;display:none}
+#hud.on{display:block}
+#pauseBtn{position:absolute;left:10px;top:10px;width:54px;height:54px;border:3px solid #fff;border-radius:10px;background:#0004;display:flex;gap:9px;align-items:center;justify-content:center;pointer-events:auto;cursor:pointer}
+#pauseBtn i{display:block;width:9px;height:26px;background:#fff;border-radius:2px}
+#upgBtn{position:absolute;left:10px;top:76px;padding:10px 14px;border:3px solid #fff;border-radius:12px;background:linear-gradient(#ff9a3c,#ee5a1c);font-size:16px;pointer-events:auto;cursor:pointer;box-shadow:0 4px 0 #8a2d0a}
+#money{position:absolute;right:16px;top:4px;font-size:clamp(38px,7vw,78px);line-height:1;display:flex;align-items:flex-start;gap:4px;letter-spacing:1px}
+#money b{color:#2ee27a;font-size:.62em;margin-top:.05em}
+#info{position:absolute;left:50%;top:10px;transform:translateX(-50%);text-align:center;font-size:clamp(12px,1.6vw,17px);line-height:1.5}
+#info span{color:#ffd24a}
+#carry{position:absolute;left:10px;top:136px;display:flex;flex-direction:column;gap:4px;font-size:14px}
+#carry div{display:flex;align-items:center;gap:8px;background:#23183fb0;border-radius:8px;padding:3px 10px 3px 6px;min-width:150px}
+#carry i{width:14px;height:14px;border-radius:50%;border:2px solid #fff;display:block}
+#carry span{margin-left:auto;color:#ffd24a}
+#bars{position:absolute;right:14px;bottom:14px;display:flex;gap:12px;align-items:flex-end}
+.bar{width:clamp(22px,3vw,34px);height:clamp(150px,34vh,300px);border:3px solid #fff;border-radius:8px;background:#3a2f55;overflow:hidden;position:relative}
+.bar i{position:absolute;left:0;right:0;bottom:0;display:block;height:0;transition:height .08s linear}
+#barBag i{background:linear-gradient(#ff9a3c,#ee5a1c)}
+#barTidy i{background:linear-gradient(#4df08c,#16b956)}
+.barWrap{display:flex;flex-direction:column;align-items:center;gap:6px}
+.ico{width:38px;height:38px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}
+.ico svg{width:26px;height:26px}
+#cross{position:absolute;left:50%;top:50%;width:12px;height:12px;margin:-6px 0 0 -6px;border:2px solid #fff;border-radius:50%;opacity:.85;box-shadow:0 0 0 1px #0006}
+#prompt{position:absolute;left:50%;bottom:18%;transform:translateX(-50%);font-size:clamp(16px,2.4vw,26px);text-align:center;opacity:0;transition:opacity .15s}
+#prompt.on{opacity:1}
+#toast{position:absolute;left:50%;top:22%;transform:translateX(-50%);font-size:clamp(20px,3.4vw,40px);text-align:center;opacity:0;transition:opacity .25s;color:#ffd24a;width:90%}
+#toast.on{opacity:1}
+#joy{position:absolute;left:18px;bottom:18px;width:150px;height:150px;border-radius:50%;border:3px solid #fffb;background:#0003;display:none;pointer-events:auto}
+#joy i{position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:radial-gradient(#fffe,#bbb8)}
+#btnVac,#btnAct{position:absolute;display:none;pointer-events:auto;border-radius:50%;border:3px solid #fff;font-size:15px;text-align:center;align-items:center;justify-content:center}
+#btnVac{right:128px;bottom:40px;width:96px;height:96px;background:linear-gradient(#3fb6ff,#1469d6)}
+#btnAct{right:136px;bottom:150px;width:68px;height:68px;background:linear-gradient(#4df08c,#16b956)}
+body.touch #joy{display:block}
+body.touch #btnVac,body.touch #btnAct{display:flex}
+.screen{position:fixed;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:20px;z-index:20;background:radial-gradient(ellipse at center,#5a3fa8dd,#1d1338f2)}
+.screen.on{display:flex}
+.screen h1{margin:0 0 6px;font-size:clamp(40px,9vw,104px);line-height:.95;letter-spacing:2px;color:#ffd24a}
+.screen h2{margin:0 0 14px;font-size:clamp(18px,3vw,30px);color:#fff;font-weight:700}
+.screen p{max-width:640px;margin:6px auto;font-size:clamp(14px,1.8vw,18px);line-height:1.5;opacity:.92}
+.btn{pointer-events:auto;cursor:pointer;border:4px solid #fff;border-radius:16px;padding:14px 38px;margin:8px;font-size:clamp(20px,3vw,32px);color:#fff;background:linear-gradient(#4df08c,#16b956);box-shadow:0 6px 0 #0a5a26;font-family:inherit;font-weight:900}
+.btn:active{transform:translateY(4px);box-shadow:0 2px 0 #0a5a26}
+.btn.alt{background:linear-gradient(#ff9a3c,#ee5a1c);box-shadow:0 6px 0 #8a2d0a}
+.keys{display:grid;grid-template-columns:auto auto;gap:4px 18px;margin:14px auto;font-size:15px;text-align:left}
+.keys b{color:#ffd24a}
+#upg{width:min(560px,94vw);background:#2a1d4d;border:4px solid #ffd24a;border-radius:18px;padding:16px;box-shadow:0 10px 40px #000a}
+.urow{display:flex;align-items:center;gap:10px;margin:10px 0;background:#3d2c6d;border-radius:12px;padding:10px 12px;text-align:left}
+.urow div.t{flex:1}
+.urow small{display:block;opacity:.75;font-size:12px;font-weight:400}
+.pips{display:flex;gap:4px;margin-top:5px}
+.pips i{width:16px;height:8px;border-radius:3px;background:#57458c}
+.pips i.f{background:#ff9a3c}
+.ubtn{font-family:inherit;font-weight:900;font-size:16px;color:#fff;border:3px solid #fff;border-radius:10px;padding:8px 12px;background:linear-gradient(#4df08c,#16b956);cursor:pointer;min-width:96px}
+.ubtn:disabled{background:#6a5f8a;opacity:.7;cursor:default}
+#flash{position:fixed;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:15}
+#loading{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#2a2340;z-index:30;font-size:24px;color:#ffd24a;text-align:center;padding:20px}
+
+/* Extracted from the original inline style attributes. */
+.pause-title { font-size: clamp(36px, 7vw, 80px); }
+.upgrades-title { margin: 0 0 4px; color: #ffd24a; }
+.upgrade-cash { font-size: 22px; }
+#upgClose { margin-top: 6px; }
+.win-stat-highlight { color: #ffd24a; }
