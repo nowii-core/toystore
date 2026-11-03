@@ -39,9 +39,9 @@ The project uses a custom WebGL2 rendering pipeline, procedural geometry and tex
 ## Preview
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/nowii-core/toystore/main/toystore1.png" width="32%" alt="Toy Town — Tidy-Up preview 1" />
-  <img src="https://raw.githubusercontent.com/nowii-core/toystore/main/toystore2.png" width="32%" alt="Toy Town — Tidy-Up preview 2" />
-  <img src="https://raw.githubusercontent.com/nowii-core/toystore/main/toystore3.png" width="32%" alt="Toy Town — Tidy-Up preview 3" />
+  <img src="https://raw.githubusercontent.com/nowii-core/toystore/main/toystore1.png" width="49%" alt="Toy Town — Tidy-Up preview 1" />
+  <img src="https://raw.githubusercontent.com/nowii-core/toystore/main/toystore2.png" width="49%" alt="Toy Town — Tidy-Up preview 2" />
+  <img src="https://raw.githubusercontent.com/nowii-core/toystore/main/toystore3.png" width="49%" alt="Toy Town — Tidy-Up preview 3" />
 </p>
 
 **Live Demo:** https://nowii-core.github.io/toystore/toystore/
