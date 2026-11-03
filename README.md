@@ -44,13 +44,7 @@ The project uses a custom WebGL2 rendering pipeline, procedural geometry and tex
   <img src="../toystore3.png" width="32%" alt="Toy Town — Tidy-Up preview 3" />
 </p>
 
-## Live Demo
-
-Play the game in your browser:
-
-**[Play Toy Town — Tidy-Up](https://nowii-core.github.io/toystore/toystore/)**
-
-The game files are stored in the repository's `toystore/` subdirectory, so the `/toystore/` folder is included after the GitHub Pages project address.
+**Live Demo:** https://nowii-core.github.io/toystore/toystore/
 
 ## Tech Stack
 
